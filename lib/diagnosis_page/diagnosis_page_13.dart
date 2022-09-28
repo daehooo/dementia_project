@@ -12,25 +12,34 @@ class _Diagnosis13State extends State<Diagnosis13> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar_01(context),
-      body: Column(
+      body: Column(children: [
+        const SizedBox(
+          height: 15,
+        ),
+        const Center(
+          child: Text(
+            '계산 능력이 떨어졌다.',
+            style: TextStyle(fontSize: 40),
+          ),
+        ),
+        SizedBox(
+          width: 200,
+          height: 150,
+          child: Image.asset("assets/image3.png"),
+        ),
+        const SizedBox(
+          height: 50,
+        ),
+        question(context, '/fifteenth'),
+      ]),
+    );
+  }
+
+  Expanded question(BuildContext context, String path) {
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          const SizedBox(
-            height: 15,
-          ),
-          const Center(
-            child: Text(
-              '본인에게 중요한 사항을 잊는다.(예를 들어 배우자 생일, 결혼 기념일, 제삿날 등)',
-              style: TextStyle(fontSize: 40),
-            ),
-          ),
-          SizedBox(
-            width: 200,
-            height: 150,
-            child: Image.asset("assets/image3.png"),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
           Row(
             children: [
               Image.asset(
@@ -43,11 +52,11 @@ class _Diagnosis13State extends State<Diagnosis13> {
                     backgroundColor: Colors.green,
                     minimumSize: const Size(300, 70),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(13.0),
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
                     elevation: 0),
                 onPressed: () {
-                  navigatorName(context, '/fifteenth');
+                  navigatorName(context, path);
                 },
                 child: const Text(
                   '1.그렇지 않다',
@@ -71,11 +80,11 @@ class _Diagnosis13State extends State<Diagnosis13> {
                     backgroundColor: Colors.green,
                     minimumSize: const Size(300, 70),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(13.0),
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
                     elevation: 0),
                 onPressed: () {
-                  navigatorName(context, '/fifteenth');
+                  navigatorName(context, path);
                 },
                 child: const Text(
                   '2. 간혹(약간) 그렇다',
@@ -87,31 +96,33 @@ class _Diagnosis13State extends State<Diagnosis13> {
           const SizedBox(
             height: 15,
           ),
-          Row(
-            children: [
-              Image.asset(
-                "assets/diagnosis_screen/react_yes.png",
-                width: 70,
-                height: 70,
+          Row(children: [
+            Image.asset(
+              "assets/diagnosis_screen/react_yes.png",
+              width: 70,
+              height: 70,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  minimumSize: const Size(300, 70),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  elevation: 0),
+              onPressed: () {
+                navigatorName(context, path);
+              },
+              child: const Text(
+                '3. 자주 그렇다',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: const Size(300, 70),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(13.0),
-                    ),
-                    elevation: 0),
-                onPressed: () {
-                  navigatorName(context, '/fifteenth');
-                },
-                child: const Text(
-                  '3. 자주 그렇다',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ]),
+          const SizedBox(
+            height: 70,
+            width: 1,
+          )
         ],
       ),
     );

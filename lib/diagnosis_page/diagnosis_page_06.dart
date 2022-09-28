@@ -19,7 +19,7 @@ class _Diagnosis06State extends State<Diagnosis06> {
           ),
           const Center(
             child: Text(
-              '본인에게 중요한 사항을 잊는다.(예를 들어 배우자 생일, 결혼 기념일, 제삿날 등)',
+              '약속을 해놓고 잊는다.',
               style: TextStyle(fontSize: 40),
             ),
           ),
@@ -31,6 +31,17 @@ class _Diagnosis06State extends State<Diagnosis06> {
           const SizedBox(
             height: 50,
           ),
+          question(context, '/eightth')
+        ],
+      ),
+    );
+  }
+
+  Expanded question(BuildContext context, String path) {
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
           Row(
             children: [
               Image.asset(
@@ -47,10 +58,10 @@ class _Diagnosis06State extends State<Diagnosis06> {
                     ),
                     elevation: 0),
                 onPressed: () {
-                  navigatorName(context, '/eightth');
+                  navigatorName(context, path);
                 },
                 child: const Text(
-                  '1.그렇지 않다.',
+                  '1.그렇지 않다',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 ),
               ),
@@ -75,7 +86,7 @@ class _Diagnosis06State extends State<Diagnosis06> {
                     ),
                     elevation: 0),
                 onPressed: () {
-                  navigatorName(context, '/eightth');
+                  navigatorName(context, path);
                 },
                 child: const Text(
                   '2. 간혹(약간) 그렇다',
@@ -87,31 +98,33 @@ class _Diagnosis06State extends State<Diagnosis06> {
           const SizedBox(
             height: 15,
           ),
-          Row(
-            children: [
-              Image.asset(
-                "assets/diagnosis_screen/react_yes.png",
-                width: 70,
-                height: 70,
+          Row(children: [
+            Image.asset(
+              "assets/diagnosis_screen/react_yes.png",
+              width: 70,
+              height: 70,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  minimumSize: const Size(300, 70),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  elevation: 0),
+              onPressed: () {
+                navigatorName(context, path);
+              },
+              child: const Text(
+                '3. 자주 그렇다',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: const Size(300, 70),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    elevation: 0),
-                onPressed: () {
-                  navigatorName(context, '/eightth');
-                },
-                child: const Text(
-                  '3. 자주 그렇다',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ]),
+          const SizedBox(
+            height: 70,
+            width: 1,
+          )
         ],
       ),
     );

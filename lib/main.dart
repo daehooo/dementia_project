@@ -90,20 +90,26 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 150,
             ),
-            Image.asset(
-              'assets/peonani.png',
-              fit: BoxFit.fill,
-              width: 300,
-              height: 100,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15.0),
+              child: Image.asset(
+                'assets/peonani.png',
+                fit: BoxFit.fill,
+                width: 300,
+                height: 100,
+              ),
             ),
             const SizedBox(
               height: 150,
             ),
             Row(children: [
-              Image.asset(
-                width: 100,
-                height: 100,
-                'assets/image5.png',
+              ClipRRect(
+                borderRadius: BorderRadius.circular(50.0),
+                child: Image.asset(
+                  width: 90,
+                  height: 90,
+                  'assets/image5.png',
+                ),
               ),
               const SizedBox(
                 width: 20,
@@ -113,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     backgroundColor: Colors.green,
                     minimumSize: const Size(250, 100),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(50.0),
                     ),
                     elevation: 0),
                 onPressed: () {
@@ -129,10 +135,13 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50,
             ),
             Row(children: [
-              Image.asset(
-                width: 100,
-                height: 100,
-                'assets/image1.png',
+              ClipRRect(
+                borderRadius: BorderRadius.circular(50.0),
+                child: Image.asset(
+                  width: 90,
+                  height: 90,
+                  'assets/image1.png',
+                ),
               ),
               const SizedBox(
                 width: 20,
@@ -142,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     backgroundColor: Colors.green,
                     minimumSize: const Size(250, 100),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(50.0),
                     ),
                     elevation: 0),
                 onPressed: () {
@@ -158,10 +167,13 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50,
             ),
             Row(children: [
-              Image.asset(
-                width: 100,
-                height: 100,
-                'assets/image2.png',
+              ClipRRect(
+                borderRadius: BorderRadius.circular(50.0),
+                child: Image.asset(
+                  width: 90,
+                  height: 90,
+                  'assets/image2.png',
+                ),
               ),
               const SizedBox(
                 width: 20,
@@ -171,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     backgroundColor: Colors.green,
                     minimumSize: const Size(250, 100),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(50.0),
                     ),
                     elevation: 0),
                 onPressed: () {

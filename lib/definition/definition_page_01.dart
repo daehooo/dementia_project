@@ -21,9 +21,10 @@ class _Definition01State extends State<Definition01> {
             fit: BoxFit.fill,
           ),
           Container(
-            width: 250,
-            height: 250,
-            color: Colors.blue,
+            margin: EdgeInsets.only(left: 30),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20), color: Colors.blue),
+            padding: EdgeInsets.all(30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
@@ -62,7 +63,7 @@ class _Definition01State extends State<Definition01> {
           height: 50,
         ),
         Column(
-          children: [
+          children: <Widget>[
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
