@@ -14,13 +14,11 @@ class _Definition02State extends State<Definition02> {
       appBar: appBar_01(context),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Row(children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15.0),
-            child: Image.asset(
-              'assets/definition_screen/mrpeonani2.png',
-              width: 100,
-              height: 160,
-            ),
+          Image.asset(
+            'assets/definition_screen/mrpeonani2.png',
+            width: 100,
+            height: 160,
+            fit: BoxFit.fill,
           ),
           Container(
             width: 290,
